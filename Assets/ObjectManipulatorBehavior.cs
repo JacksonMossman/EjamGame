@@ -94,7 +94,9 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
 
     private void RotateObj()
     {
-        objectIHave.transform.Rotate(rotateVector,Space.World);
+       // Rigidbody rb = objectIHave.GetComponent<Rigidbody>();
+        objectRB.AddTorque(rotateVector);
+        //objectIHave.transform.Rotate(rotateVector,Space.World);
     }
 
 
@@ -108,6 +110,10 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
 
     private void MoveObjToPos()
     {
+        if(objectRB.velocity.magnitude > 0)
+        {
+            objectRB.velocity = new Vector3();
+        }
         objectIHave.transform.position = Vector3.Lerp(objectIHave.transform.position, holdPos.position, attractSpeed * Time.deltaTime);
     }
 
@@ -115,6 +121,7 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
     {
         objectRB.constraints = RigidbodyConstraints.None;
         objectIHave.transform.parent = null;
+        objectRB.useGravity = true;
         objectIHave = null;
         hasObject = false;
     }
@@ -140,7 +147,8 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
                 objectIHave.transform.SetParent(holdPos);
 
                 objectRB = objectIHave.GetComponent<Rigidbody>();
-                objectRB.constraints = RigidbodyConstraints.FreezeAll;
+                objectRB.constraints = RigidbodyConstraints.None;
+                objectRB.useGravity = false;
 
                 hasObject = true;
 
@@ -151,5 +159,6 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
         // Start is called before the first frame update
 
     // Update is called once per frame
+    
 
 }
