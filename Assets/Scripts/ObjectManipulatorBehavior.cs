@@ -72,24 +72,32 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
     {
         float x;
         float y;
-        
-      
-    
-            x = Input.GetAxis("Vertical");
 
 
 
-             y = -Input.GetAxis("Horizontal");
-            
-        
+        x = Input.GetAxis("Vertical");
+
+
+
+        y = Input.GetAxis("Horizontal");
+
+
         //x =Input.GetAxis("Vertical");
 
-    
+
 
         //float y = Input.GetAxis("Horizontal"); ;
         float z = Input.GetAxis("Pitch");
-        
-        rotateVector = new Vector3(x, y, z);
+        if (Input.GetAxis("Stop") != 0)
+        {
+            objectRB.angularVelocity = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            rotateVector = new Vector3(x, y, z) * 10;
+        }
+
+      
     }
 
     private void RotateObj()

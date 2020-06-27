@@ -23,6 +23,7 @@ public class CakeCollectingBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("Ingredient"))
         {
             Rigidbody[] childrenlist = other.gameObject.GetComponentsInChildren<Rigidbody>();
+
             other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             for(int i = 0; i<other.gameObject.GetComponentsInChildren<Rigidbody>().Length;i++)
             {
