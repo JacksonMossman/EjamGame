@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ingredientBoxBehavior : MonoBehaviour
 {
-    List<int> ingredientCollected = new List<int>();
+    public List<int> ingredientCollected = new List<int>();
     // Start is called before the first frame update
     void Start()
     {
