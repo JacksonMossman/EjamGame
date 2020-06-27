@@ -72,20 +72,22 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
     {
         float x;
         float y;
+        
       
     
             x = Input.GetAxis("Vertical");
 
 
 
-             y = -Input.GetAxis("Horizontal"); ;
+             y = -Input.GetAxis("Horizontal");
+            
         
         //x =Input.GetAxis("Vertical");
 
     
 
         //float y = Input.GetAxis("Horizontal"); ;
-        float z = 0;
+        float z = Input.GetAxis("Pitch");
         
         rotateVector = new Vector3(x, y, z);
     }
