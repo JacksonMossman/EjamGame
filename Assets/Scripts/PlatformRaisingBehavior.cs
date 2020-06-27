@@ -20,21 +20,20 @@ public class PlatformRaisingBehavior : MonoBehaviour
         if(ballistOff == true)
         {
 
-             rigidbody.AddForce(new Vector3(0, 1, 0),ForceMode.Force);
+             rigidbody.AddForce(new Vector3(0, 1000, 0),ForceMode.Force);
         }
        
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Block"))
+        if(other.gameObject.CompareTag("Cake"))
         {
-            boxcount--;
-        }
-        if(boxcount <=2)
-        {
+            other.transform.parent = gameObject.transform;
+            other.GetComponent<Rigidbody>().isKinematic = true;
             ballistOff = true;
             rigidbody.constraints = RigidbodyConstraints.None;
             rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
         }
+        
     }
 }

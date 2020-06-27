@@ -29,16 +29,20 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
+        //if (hasObject && objectIHave.CompareTag("CollectedIngredient"));
+        //{
+        //    if (objectIHave.CompareTag("CollectedIngredient"))
+        //    {
+        //        DropObj();
+        //    }
+        //}
         if (Input.GetMouseButtonDown(0) && !hasObject)
         {
             DoRay();
         }
 
-        if (Input.GetMouseButton(1) && hasObject)
-        {
-            throwForce += 0.1f;
-        }
+   
 
         //if (Input.GetMouseButtonUp(1) && hasObject)
         //{
@@ -49,6 +53,7 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
         {
             DropObj();
         }
+     
 
         if (hasObject)
         {
@@ -149,7 +154,7 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactDist))
         {
-            if (hit.collider.CompareTag("Block") || hit.collider.CompareTag("Ingredient"))
+            if (hit.collider.CompareTag("Block"))
             {
                 objectIHave = hit.collider.gameObject;
                 objectIHave.transform.SetParent(holdPos);
