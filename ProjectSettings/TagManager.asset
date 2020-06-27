@@ -8,6 +8,8 @@ TagManager:
   - Block
   - Ingredient
   - Ballast
+  - Cake
+  - CollectedIngredient
   layers:
   - Default
   - TransparentFX

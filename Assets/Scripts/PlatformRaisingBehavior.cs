@@ -20,7 +20,7 @@ public class PlatformRaisingBehavior : MonoBehaviour
         if(ballistOff == true)
         {
 
-             rigidbody.AddForce(new Vector3(0, 1, 0),ForceMode.Impulse);
+             rigidbody.AddForce(new Vector3(0, 1, 0),ForceMode.Force);
         }
        
     }

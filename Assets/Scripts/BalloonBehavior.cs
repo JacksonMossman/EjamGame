@@ -14,6 +14,6 @@ public class BalloonBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidbody.AddForce(0, 5f, 0, ForceMode.Force);
+        rigidbody.AddForce(0, 0.5f, 0, ForceMode.Force);
     }
 }

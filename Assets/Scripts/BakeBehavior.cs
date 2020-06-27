@@ -23,11 +23,11 @@ public class BakeBehavior : MonoBehaviour
         cake.SetActive(true); 
         if(collision.gameObject.CompareTag("player"))
         {  
-            foreach(int i in ingredientBox.GetComponent<ingredientBoxBehavior>().ingredientCollected)
-            {
-                //make cake Script
-                cake.GetComponent<CakeBehavior>().ingredients[i].SetActive(true);
-            }
+            //foreach(GameObject i in ingredientBox.GetComponent<ingredientBoxBehavior>().ingredientCollected)
+            //{
+            //    //make cake Script
+            //    //cake.GetComponent<CakeBehavior>().ingredients[i].SetActive(true);
+            //}
 
         }
     

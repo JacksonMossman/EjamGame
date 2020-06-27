@@ -141,7 +141,7 @@ public class ObjectManipulatorBehavior  : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactDist))
         {
-            if (hit.collider.CompareTag("Block"))
+            if (hit.collider.CompareTag("Block") || hit.collider.CompareTag("Ingredient"))
             {
                 objectIHave = hit.collider.gameObject;
                 objectIHave.transform.SetParent(holdPos);

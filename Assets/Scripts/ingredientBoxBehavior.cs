@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ingredientBoxBehavior : MonoBehaviour
 {
-    public List<int> ingredientCollected = new List<int>();
+    public List<GameObject> ingredientCollected = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,8 @@ public class ingredientBoxBehavior : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Ingredient"))
         {
-            ingredientCollected.Add(other.gameObject.GetComponent<IngredientBehavior>().IngedientID);
+            ingredientCollected.Add(other.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
