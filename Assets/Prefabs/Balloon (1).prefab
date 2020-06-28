@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1887585299510215630}
+  - component: {fileID: 3041471175302360750}
   m_Layer: 0
   m_Name: Balloon (1)
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6767183134048320601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.573, y: 1.57, z: 2.26}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5675300500681288957}
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3041471175302360750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767183134048320601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9404238, y: 1.09, z: 1}
+  m_Center: {x: -0.034788072, y: 0, z: 0}
 --- !u!1 &7357661429402031555
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +399,7 @@ PrefabInstance:
     - target: {fileID: 8264286312527670597, guid: 77be351a6c3270d498ede64fc9d5c1db,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8264286312527670598, guid: 77be351a6c3270d498ede64fc9d5c1db,
         type: 3}

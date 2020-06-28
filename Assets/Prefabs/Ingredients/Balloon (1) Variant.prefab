@@ -104,7 +104,7 @@ PrefabInstance:
     - target: {fileID: 6767183134048320601, guid: 7d43b35ea46d8a04ca9856d0f5865646,
         type: 3}
       propertyPath: m_Name
-      value: Balloon (1)
+      value: Balloon (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6767183134048320601, guid: 7d43b35ea46d8a04ca9856d0f5865646,
         type: 3}

@@ -11,6 +11,7 @@ TagManager:
   - Cake
   - CollectedIngredient
   - OvenFlame
+  - BakedCake
   layers:
   - Default
   - TransparentFX
