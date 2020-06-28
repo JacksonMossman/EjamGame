@@ -158,7 +158,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: d1968b9fa7dd6d840ad2fc426690b066,
         type: 3}
       propertyPath: m_Name
-      value: cheese
+      value: cheese Variant
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: d1968b9fa7dd6d840ad2fc426690b066,
         type: 3}
@@ -169,7 +169,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7230b65ff1dd5ed4b9081463b0055937, type: 2}
+      objectReference: {fileID: 2100000, guid: 886bdce6d47955146a9286f6881406c0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1968b9fa7dd6d840ad2fc426690b066, type: 3}
 --- !u!1 &3901549070356270231 stripped

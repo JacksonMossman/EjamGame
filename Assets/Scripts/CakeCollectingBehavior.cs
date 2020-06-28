@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CakeCollectingBehavior : MonoBehaviour
 {
+    public int Score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class CakeCollectingBehavior : MonoBehaviour
                 
             }
             other.gameObject.tag = "CollectedIngredient";
-            
+            Score++;
             
             other.gameObject.GetComponent<Transform>().SetParent(transform);
             //collision.gameObject.transform.parent = transform;
