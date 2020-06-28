@@ -10,6 +10,7 @@ TagManager:
   - Ballast
   - Cake
   - CollectedIngredient
+  - OvenFlame
   layers:
   - Default
   - TransparentFX

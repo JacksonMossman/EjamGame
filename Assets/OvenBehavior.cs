@@ -10,10 +10,12 @@ public class OvenBehavior : MonoBehaviour
 
     void Start()
     {
-        smoke = transform.GetChild(0).GetComponent<ParticleSystem>();
+        smoke = GetComponent<ParticleSystem>();
     }
     void OnTriggerEnter(Collider other)
     {
-        smoke.Play();
+        if(other.gameObject.CompareTag("Cake"))
+        { smoke.Play(); }
+       
     }
 }

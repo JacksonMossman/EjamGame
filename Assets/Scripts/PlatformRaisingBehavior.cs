@@ -39,7 +39,7 @@ public class PlatformRaisingBehavior : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Cake"))
+        if(other.gameObject.CompareTag("BakedCake"))
         {
             cake = other.gameObject;
             Vector3 store = other.transform.localScale ;
