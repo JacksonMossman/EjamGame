@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-  
+    public float jump_cdr = 1f;
+    private float nextJumpTime = 0.0f;
     private Transform tranform;
     private bool grounded;
     public Rigidbody rb;
@@ -21,9 +22,13 @@ public class Jump : MonoBehaviour
     {
         move_dir = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.Space) && grounded)
+        if(Time.time > nextJumpTime)
         {
-            rb.AddForce(Vector3.up * jump_force * Time.fixedDeltaTime, ForceMode.Impulse);
+            if (Input.GetKey(KeyCode.Space) && grounded)
+            {
+                rb.AddForce(Vector3.up * jump_force * Time.fixedDeltaTime, ForceMode.Impulse);
+                nextJumpTime = Time.time + jump_cdr;
+            }
         }
         if (Input.GetKey(KeyCode.W))
         {
@@ -47,11 +52,8 @@ public class Jump : MonoBehaviour
     
     void OnCollisionEnter(Collision collision)
     {
-        grounded = true;
-    }
+        Debug.Log(collision.gameObject.name);
 
-    void OnCollisionStay(Collision collision)
-    {
         grounded = true;
     }
 

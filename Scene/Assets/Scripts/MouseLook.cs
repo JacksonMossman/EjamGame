@@ -17,7 +17,7 @@ using System.Collections;
 [AddComponentMenu("Camera-Control/Mouse Look")]
 public class MouseLook : MonoBehaviour
 {
-
+	public GameObject cam_obj;
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
 	public float sensitivityX = 15F;
@@ -33,6 +33,18 @@ public class MouseLook : MonoBehaviour
 	float rotationY = 0F;
 
 	Quaternion originalRotation;
+
+	void Start()
+	{
+		// Make the rigid body not change rotation
+		if (GetComponent<Rigidbody>())
+		{
+			GetComponent<Rigidbody>().freezeRotation = false;
+		}
+		originalRotation = transform.localRotation;
+
+		cam_obj = this.gameObject.transform.GetChild(0).gameObject;
+	}
 
 	void Update()
 	{
@@ -68,13 +80,7 @@ public class MouseLook : MonoBehaviour
 		}
 	}
 
-	void Start()
-	{
-		// Make the rigid body not change rotation
-		if (GetComponent<Rigidbody>())
-			GetComponent<Rigidbody>().freezeRotation = true;
-		originalRotation = transform.localRotation;
-	}
+	
 
 	public static float ClampAngle(float angle, float min, float max)
 	{
