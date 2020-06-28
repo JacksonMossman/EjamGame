@@ -11,7 +11,7 @@ public class ScoreMangerBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cakeCollectingBehavior = cake.GetComponent<CakeCollectingBehavior>();
     }
 
     // Update is called once per frame
