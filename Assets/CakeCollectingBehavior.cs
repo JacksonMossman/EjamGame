@@ -28,6 +28,7 @@ public class CakeCollectingBehavior : MonoBehaviour
             for(int i = 0; i<other.gameObject.GetComponentsInChildren<Rigidbody>().Length;i++)
             {
                 childrenlist[i].isKinematic = true;
+                childrenlist[i].gameObject.GetComponent<Collider>().gameObject.SetActive(false);
             }
             other.gameObject.tag = "CollectedIngredient";
             
