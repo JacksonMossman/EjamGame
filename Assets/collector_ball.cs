@@ -9,7 +9,7 @@ public class collector_ball : MonoBehaviour
     {
         if (collision.gameObject.transform.GetComponent<Rigidbody>())
         {
-            if (collision.gameObject.name != "player")
+            if (collision.gameObject.name != "Player")
             {
                 Debug.Log("Collided With Object That Was Collectable");
                 collision.gameObject.transform.parent = this.transform;

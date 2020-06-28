@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class player_movement_marks : MonoBehaviour
 {
-    public Rigidbody rb;
+    private Rigidbody rb; //Player Object can only have one RigidBody 
     public float jump_cdr = 0.5f; //cooldown for jump in secs
     public float jump_force = 200f; //force of jump force.Impulse
     public float move_force = 10f;
@@ -21,9 +21,9 @@ public class player_movement_marks : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        coli = GetComponent<CapsuleCollider>();
-        cam_obj = transform.GetChild(0).gameObject;
+        rb = GetComponent<Rigidbody>(); //Rigidbody component of the Player GameObject
+        coli = GetComponent<CapsuleCollider>(); //Collider of the Player GameObject
+        cam_obj = transform.GetChild(0).gameObject; //Camera needs to be First Child of Player Parent Object
     }
 
     void FixedUpdate()
